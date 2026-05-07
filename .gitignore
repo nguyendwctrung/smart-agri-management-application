@@ -1,0 +1,50 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Firebase secret key
+embedded/raspberry_pi/serviceAccountKey.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Tool/test caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build/distribution outputs
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Secrets
+# =========================
+# Firebase service account key for Raspberry Pi integration
+embedded/raspberry_pi/serviceAccountKey.json
+
+# =========================
+# Arduino / C-C++ (embedded/arduino/)
+# =========================
+# Arduino IDE and arduino-cli build outputs
+embedded/arduino/build/
+embedded/arduino/.arduinoIDE/
+embedded/arduino/*.ino.bin
+embedded/arduino/*.elf
+embedded/arduino/*.hex
+embedded/arduino/*.map
+
+# C/C++ compile artifacts
+embedded/arduino/**/*.o
+embedded/arduino/**/*.obj
+embedded/arduino/**/*.d
+embedded/arduino/**/*.a
+
+# Common editor/system junk
+.DS_Store
+Thumbs.db
