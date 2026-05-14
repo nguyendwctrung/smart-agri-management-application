@@ -5,8 +5,7 @@
 #include <SoftwareSerial.h>
 #include <MQUnifiedsensor.h>
 
-// ===== CONFIG =====
-#define TIME_WAIT 3000   // giảm xuống để test nhanh
+#define TIME_WAIT 3000
 #define RX_ZIGBEE 10
 #define TX_ZIGBEE 11
 
@@ -35,7 +34,6 @@ String Packet(float lux, float temperature, float humidity, float co2, float smo
          String(soil);
 }
 
-// ===== SOIL =====
 float calculate_soil_moisture_percentage(int value) {
   return 100 - (value / 1023.0) * 100;
 }
@@ -67,15 +65,12 @@ void setup() {
 }
 
 void loop() {
-  // ===== MQ135 =====
   MQ135.update();
 
-  // CO2
   MQ135.setA(605.18);
   MQ135.setB(-3.937);
   float co2 = MQ135.readSensor();
 
-  // Smoke
   MQ135.setA(110.47);
   MQ135.setB(-2.862);
   float smoke = MQ135.readSensor();
